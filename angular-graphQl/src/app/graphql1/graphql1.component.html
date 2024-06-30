@@ -1,0 +1,24 @@
+<div>
+  {{ codeCountry() }}
+  <h1>{{ country()?.name }}</h1>
+  <h3>{{ country()?.code }}</h3>
+  <h3>{{ country()?.currency }}</h3>
+  <h3>{{ country()?.phone }}</h3>
+  <h3>{{ country()?.awsRegion }}</h3>
+</div>
+<hr />
+
+<main>
+  @if(loading()){
+  <h1>Loading...</h1>
+  } @for (post of posts(); track post.code ){
+  <div>
+    <button (click)="getCountry(post.code)">
+      <h1>{{ post.code }}</h1>
+    </button>
+    <h2>{{ post.name }}</h2>
+    <p>{{ post.currency }}</p>
+    {{ post.continent.name }}
+  </div>
+  }
+</main>

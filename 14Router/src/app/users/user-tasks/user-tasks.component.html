@@ -1,0 +1,11 @@
+<section id="tasks">
+  <header>
+    <h2>{{ currentUser()?.name }} - {{ userName() }}</h2>
+    {{ title() }}
+    <menu>
+      <a routerLink="tasks/new">Add Task</a>
+    </menu>
+  </header>
+
+  <router-outlet />
+</section>

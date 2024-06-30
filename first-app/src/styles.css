@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+ul,
+ol,
+div,
+span,
+input,
+textarea,
+select,
+button,
+form,
+table,
+tr,
+td,
+th,
+label,
+img,
+iframe,
+nav,
+footer,
+header,
+section,
+article,
+aside,
+main,
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #505050;
+}

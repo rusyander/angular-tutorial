@@ -1,0 +1,6 @@
+<app-card>
+  <button (click)="onSelectUser(user().id)" [class.active]="isSame">
+    <img [src]="userImage()" [alt]="user().name" />
+    <span>Name: {{ user().name }}</span>
+  </button>
+</app-card>

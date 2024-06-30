@@ -1,0 +1,71 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Login</h2>
+
+  <div class="control-row">
+    <div class="control no-margin">
+      <label for="email">Email</label>
+      <input id="email" type="email" [formControl]="form.controls.email" />
+    </div>
+
+    <div class="control no-margin">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        [formControl]="form.controls.password"
+      />
+      <!-- <input id="password" type="password"  formControlName="password" />   привязка через formControlName-->
+    </div>
+
+    <button class="button" [disabled]="!form.status">Login</button>
+  </div>
+
+  @if(emailIsInvalid){
+  <p class="control-error">Please provide a valid email address</p>
+  } @else if(passwordInvalid){
+  <p class="control-error">
+    Please provide a valid password with at least 6 characters. Must to contains
+    ?
+  </p>
+  }
+</form>
+
+<!-- <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <h2>Login</h2>
+
+  <div class="control-row">
+    <div class="control no-margin">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        ngModel
+        required
+        email
+        #email="ngModel"
+      />
+    </div>
+
+    <div class="control no-margin">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        name="password"
+        ngModel
+        required
+        minlength="6"
+        #password="ngModel"
+      />
+    </div>
+
+    <button class="button" type="submit">Login</button>
+    <button class="button" type="reset">Reset</button>
+  </div>
+
+  @if( email.touched && email.dirty && email.invalid ){
+  <p class="control-error">Please provide a valid email address</p>
+  } @else if(password.touched && password.dirty && password.invalid){ Please
+  provide a valid password with at least 6 characters. }
+</form> -->

@@ -1,0 +1,23 @@
+<section class="tasks">
+  <header>
+    <h2>{{ name() }}'s Tasks</h2>
+    <menu>
+      <button (click)="openModal()">Add Task</button>
+    </menu>
+  </header>
+
+  <ul>
+    @for (task of tasks; track task.id){
+    <li>
+      <app-task [task]="task"></app-task>
+    </li>
+    }
+  </ul>
+</section>
+
+@if(modal()){
+<app-new-tack
+  (isModal)="onTackCansel($event)"
+  (add)="addTasks($event)"
+></app-new-tack>
+}

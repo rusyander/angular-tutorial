@@ -1,0 +1,15 @@
+<main class="main">
+  @for (item of list; track item[0] ){
+  <div class="card">
+    <div class="card-header">
+      <h2>Card Title</h2>
+    </div>
+    <div class="card-body">
+      <p>{{ item }}</p>
+    </div>
+  </div>
+  }
+  <input type="text" title="{{ tooltip }}" />
+
+  <app-my-calc> </app-my-calc>
+</main>

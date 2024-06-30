@@ -1,0 +1,16 @@
+.tacks {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tasksForm {
+  display: flex;
+  justify-content: space-around;
+}
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}

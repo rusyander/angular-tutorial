@@ -1,0 +1,60 @@
+<div class="tacks">
+  <p>graphql-nepomnyashiy works!</p>
+  <div class="tasksForm">
+    <p>
+      <label for="tack">Add tack</label>
+      <input
+        type="text"
+        placeholder="Add tack"
+        id="task"
+        name="task"
+        [(ngModel)]="title"
+      />
+      <button (click)="addTack()">Add tack</button>
+    </p>
+    <p>
+      <label for="search">Search</label>
+      <input
+        type="text"
+        placeholder="Search"
+        id="search"
+        name="search"
+        [(ngModel)]="searchModel"
+      />
+      <button (click)="search()">Search</button>
+    </p>
+
+    <div>
+      <form [formGroup]="form" (keydown)="onSearch()">
+        <label for="search">Search dinamic</label>
+        <input
+          type="text"
+          placeholder="Search"
+          id="search"
+          name="search"
+          [formControl]="form.controls.search"
+        />
+      </form>
+    </div>
+  </div>
+  <hr />
+  <h1>Tasks data</h1>
+  <ul class="tasksList">
+    @if(todosData().length === 0){
+    <h1>Loading ...</h1>
+    } @else { @for(tock of todosData(); track tock.id ){
+    <li>
+      <p>{{ tock.title }}</p>
+      <input
+        type="checkbox"
+        placeholder="Search"
+        id="search"
+        name="search"
+        checked="{{ tock.completed }}"
+        (change)="updateTodos(tock.id, tock.completed)"
+      />
+      <button (click)="deleteTodos(tock.id)">delete</button>
+    </li>
+    } }
+  </ul>
+</div>

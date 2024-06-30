@@ -1,0 +1,24 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { TicketsComponent } from './tickets.component';
+
+describe('TicketsComponent', () => {
+  let component: TicketsComponent;
+  let fixture: ComponentFixture<TicketsComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [TicketsComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(TicketsComponent);
+    component = fixture.componentInstance;
+    // fixture.componentRef.setInput('required', 'test');
+    // fixture.componentRef.setInput('required', 'ticket');
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

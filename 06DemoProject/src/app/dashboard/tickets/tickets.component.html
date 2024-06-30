@@ -1,0 +1,17 @@
+<div id="tickets">
+  <div id="new-ticker">
+    <app-new-ticker></app-new-ticker>
+  </div>
+
+  <div>
+    <ul>
+      @for (ticket of tickets; track ticket.id) {
+      <li>
+        <app-ticket [ticket]="ticket"></app-ticket>
+      </li>
+      } @empty {
+      <li>No tickets found</li>
+      }
+    </ul>
+  </div>
+</div>

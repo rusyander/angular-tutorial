@@ -1,0 +1,24 @@
+<main>
+  <ul class="users">
+    @for (user of users(); track user.id){
+    <li>
+      <app-user
+        [user]="user"
+        (select)="onSelectId($event)"
+        [selectedUserActive]="user.id"
+      ></app-user>
+    </li>
+    }
+  </ul>
+
+  @if(selectedName){
+  <app-tasks [name]="selectedName" [selectedUser]="selectedUser()"></app-tasks>
+
+  } @else {
+  <p class="fallback">Select the name</p>
+  {{ counter() }}
+  <button (click)="increment()">increment</button>
+  <button (click)="decrement()">increment</button>
+
+  }
+</main>
